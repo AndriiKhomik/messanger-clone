@@ -24,10 +24,10 @@ const ConfirmModal: FC<ConfirmModalProps> = ({ onClose, isOpen }) => {
     setIsLoading(true);
 
     axios
-      .delete(`/api/comversations/${conversationId}`)
+      .delete(`/api/conversations/${conversationId}`)
       .then(() => {
         onClose();
-        router.push("conversations");
+        router.push("/conversations");
         router.refresh();
       })
       .catch(() => toast.error("Something went wrong"))
